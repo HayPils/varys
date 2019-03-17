@@ -64,9 +64,19 @@ ROBOTSTXT_OBEY = True
 
 # Configure item pipelines
 # See https://doc.scrapy.org/en/latest/topics/item-pipeline.html
-#ITEM_PIPELINES = {
-#    'crawler.pipelines.CrawlerPipeline': 300,
-#}
+ITEM_PIPELINES = {
+    'crawler.pipelines.PostgresPipeline': 300,
+}
+
+import os
+
+DATABASE = {
+    'DB_HOST': os.environ['DB_HOST'],
+    'DB_USER': os.environ['DB_USER'],
+    'DB_PASS': os.environ['DB_PASS'],
+    'DB_NAME': os.environ['DB_NAME'],
+    'DB_PORT': os.environ['DB_PORT']
+}
 
 # Enable and configure the AutoThrottle extension (disabled by default)
 # See https://doc.scrapy.org/en/latest/topics/autothrottle.html

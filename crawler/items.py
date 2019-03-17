@@ -7,8 +7,24 @@
 
 import scrapy
 
+class ListingItem(scrapy.Item):
+    prod_id = scrapy.Field()
+    name = scrapy.Field()
+    price = scrapy.Field()
+    rating = scrapy.Field()
+    bsr = scrapy.Field()
 
-class CrawlerItem(scrapy.Item):
-    # define the fields for your item here like:
-    # name = scrapy.Field()
-    pass
+class ReviewItem(scrapy.Item):
+    list_id = scrapy.Field()
+    headline = scrapy.Field()
+    body = scrapy.Field()
+    rating = scrapy.Field()
+    votes = scrapy.Field()
+    date_pub = scrapy.Field()
+
+class FaqItem(scrapy.Item):
+    list_id = scrapy.Field()
+    question = scrapy.Field()
+    answer = scrapy.Field()
+    votes = scrapy.Field()
+    date_ans = scrapy.Field()
